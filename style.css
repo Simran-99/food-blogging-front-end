@@ -1,0 +1,380 @@
+*{ margin: 0;
+    padding: 0;
+    /*    in the predefined segment the height and width of html consists of padding and margin as well.setting this would give the html elemnet the actual heught and width of element.*/
+    box-sizing: border-box;}
+/* this is to give a basic layout to everything present of the html page*/
+html{background-color: white;
+    color:#000;
+    font-family:'lato' ,'arial',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;}
+/*A clearfix is a way for an element to automatically clear or fix its elements, so that do not need to add additional markup. It is generally used in float layout where elements are floated to be stacked horizontally. If the element is taller than the element containing it then use overflow property of CSS to overcome this.*/
+.clearfix{zoom:1}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;/* use full width of browser*/
+    height: 0;
+    visibility: hidden;}
+/*combining common properties*/
+h1,h2,h3
+{font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;}
+h1{    margin-top: 0;
+    margin-bottom: 20px;
+    word-spacing: 4px;
+    color: #fff;
+    font-size: 240%;}
+h2{font-size:180%;
+    word-spacing:2px;
+    text-align:center;
+    margin-bottom: 30px;}
+/*to display after h2 heading*/
+h2:after{display: block;
+    height: 2px;
+    background-color: orange;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;}
+h3{font-size: 110%;
+    margin-bottom:15px;}
+.row{max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-top: 0;}
+.box{padding: 1%;}
+.box p{font-size: 80%;
+    font-weight:145%;}
+section{padding: 80px 0;}
+.section-features .long-copy{
+    margin-bottom: 40px;}
+header{
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(hero.jpg); /*used to make the image a little dark*/
+    /*    image is 100%of the viewport*/
+    height: 100vh;
+    background-size: cover;/* to fit image within respective section*/
+    background-position: center;
+    color: aliceblue;}
+.hero-text-box{
+    position: absolute; /*can be positioned anywhere within there parent element*/
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    /*    translate the elements half of its width and height*/
+    transform:translate(-50%,-50%);}
+
+.btn:link,
+.btn:visited,
+input[type=submit]
+{
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 200px;
+    text-decoration: none;
+    transition: background-color 0.2s,border 0.2s,color 0.2s;}
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]
+{
+    background-color: #d35400;
+    color: #fff;
+    border:1px solid  #d35400;}
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]
+{
+    background-color: #f39c12;
+    color: #fff;
+    border:1px solid  #d35400;}
+.logo,
+.logo-black{
+    height: 100px;
+    width: auto;
+    float: left;}
+.logo{
+    margin-top:20px;}
+.logo-black{
+    display: none;}
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;}
+.main-nav li{
+    display: inline-block;
+    margin-left: 40px;}
+.main-nav li a:link,
+.main-nav li a:visited{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;}
+.main-nav li a:link,
+.main-nav li a:visited{
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid orange;}
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;}
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: #fff;}
+/*sticky nav*/
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.98);
+    box-shadow: 0 2px 2px #efefef;}
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    color: black;
+    text-decoration: none;
+    padding: 10px 0;}
+.sticky .logo-black{
+    display: block;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin-top: 2px 0 !important;}
+.sticky .logo {
+    display: none;}
+.sticky .main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 18px;}
+.long-copy{
+    text-align: center;
+    font-size: 20px;
+    width: 70%;
+    margin-left: 15%;
+    line-height: 145%;}
+.col h3{
+    text-transform: uppercase;
+    padding: 2px;
+    font-weight: 100;}
+.col p{
+    font-size: 15px;
+    line-height:2;}
+.icon-big{
+    display: block;
+    color:orange;
+    margin-bottom: 40px;
+    font-size: 400% !important;}
+meal-showcase{
+    list-style: none;
+    width: 100%;}
+.meal-showcase li{
+    width: 25%;
+    display: block;
+    float: left;}
+.meal-photo{
+    margin:0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;}
+.meal-photo img{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    /*    to avoid the white spaces within the images*/
+    transform: scale(1.15);
+    transition: transform 0.5s;
+    opacity: 0.7;}
+.meal-photo img:hover{
+    transform: scale(1.03);
+    opacity: 1;}
+.section-meal{
+    padding: 0;}
+.cities{
+    padding-top: 50px;}
+.icon-small{
+    font-size: 20px;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: orange;
+    font-size: 120%;
+    margin-right: 10px;
+    line-height: 120%; /*to align icons wwith text*/
+    vertical-align: middle;
+    margin-top: -2px;}
+.cities{
+    width: 100%;
+    background-color: }
+.box img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;}
+.city-features{
+    margin: 5px;
+    line-height: 20px;
+    vertical-align: middle;}
+a:link,
+a:visited{
+    color: orange;
+    text-decoration: none;
+    border-bottom: 1px solid orange;
+    padding-bottom: 1px;
+    transition: border 0.2s color 0.2s;}
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;}
+.section-steps{
+    background-color: #ecf0f1;}
+.steps-box{
+    margin-top: 30px;}
+.app-screen{
+    width: 40%;}
+.steps-box:first-child{
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;}
+.steps-box:last-child{
+    padding-left: 3%;
+    margin-top: 70px;}
+.works-steps{
+    margin-bottom: 50px;}
+.works-steps:last-of-type{
+    margin-bottom: 80px;}
+.works-steps div{
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;}
+.btn-app img{
+    height: 50px;
+    width: auto;
+    margin-right: 10px;}
+.btn-app:link,
+.btn-app:visited{
+    border: none;}
+.section-testimonials{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/back-customers.jpg);
+    background-size: cover;
+    color: aliceblue;
+    background-attachment: fixed;}
+blockquote{
+    padding: 2%;
+    position: relative;
+    font: italic;
+    line-height: 145%;
+    margin-top: 40px;}
+blockquote:before{
+    content: "\201C";
+    font-size: 400%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left:-3px;}
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;}
+cite{
+    display: block;}
+.section-plans{
+    background-color: #f4f4f4;}
+.plan-box{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #efefef;}
+.plan-box div{
+    padding: 15px;
+    border-bottom: 1px solid grey;
+    text-align: center;}
+.plan-box div:first-child{
+    background-color: #fcfcfc;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;}
+.plan-box div:last-child{
+    text-align: center;
+    border: 0;}
+.plan-price{
+    font-size: 200% !important;
+    margin-bottom: 10px;
+    font-weight: 300;
+    color: orange;}
+.plan-price span{
+    font-size:80%;
+    font-weight: 300;}
+.plan-price-meal{
+    font-size: 80%;}
+.plan-box ul{
+    list-style: none;
+    text-align: left;}
+.plan-box ul li{
+    padding: 5px 0;}
+.plan-box div:last-child{
+    text-align: center;
+    border:0;}
+.section-plans h3{
+    color: orange;}
+.contact-form{
+    width: 60%;
+    margin: 0 auto;}
+input[type="text"],
+input[type="email"],
+select,textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;}
+textarea{
+    height: }
+footer{
+    background-color: #efefef;}
+.footer-nav{
+    list-style: none;
+    float: left;}
+.social-links{
+    list-style: none ;
+    float: right;}
+.social-links li,
+.footer-nav li{
+    display: inline-block;
+    margin-right: 20px;}
+.social-links a,
+.footer-nav a{
+    text-decoration: none ;}
+.social-links a:hover,
+.footer-nav a:hover{
+    text-decoration: none ;
+    color: aliceblue}
+.footer p{
+    color: white;
+    text-align: center;}
+
+
+
+
+
+
+
+
+
+
